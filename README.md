@@ -1,7 +1,11 @@
+# NestJS Architecture & Advanced Patterns
+
 ## Create New Alarm
 
 ```bash
-curl -X POST http://localhost:3000/alarms -H "Content-Type: application/json" -d '{ "name": "Test Alarm", "severity": "high" }'
+curl -X POST http://localhost:3000/alarms \
+-H "Content-Type: application/json" \
+-d '{ "name": "Test Alarm", "severity": "high" }' | json_pp
 ```
 
 ## Get All Alarms

@@ -1,7 +1,8 @@
 import { AlarmSeverity } from "./value-objects/alarm-severity";
 import { AlarmItem } from "./alarm-item";
+import { VersionedAggregateRoot } from "../../shared/domain/aggregate-root";
 
-export class Alarm {
+export class Alarm extends VersionedAggregateRoot {
 
     public name: string;
     public severity: AlarmSeverity;
@@ -9,7 +10,9 @@ export class Alarm {
     public isAcknowledged = false;
     public items = new Array<AlarmItem>();
 
-    constructor(public id: string) {}
+    constructor(public id: string) {
+        super();
+    }
 
     acknowledge() {
         this.isAcknowledged = true;
